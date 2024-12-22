@@ -1,0 +1,13 @@
+The following CSS code snippet demonstrates an uncommon error related to the usage of the `calc()` function and the `::before` pseudo-element:
+
+```css
+div::before {
+  content: '';
+  display: block;
+  width: calc(100% - 20px);
+  height: 20px;
+  background-color: red;
+}
+```
+
+This code intends to create a red block element before the `div` element, with width being 20px less than the container width. However, if the parent element's width is not explicitly set, or is determined implicitly (e.g., by the content's width), the `calc()` function might not work as expected due to the `100%` width not having a concrete value. 
