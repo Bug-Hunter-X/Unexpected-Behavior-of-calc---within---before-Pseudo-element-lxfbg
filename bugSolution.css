@@ -1,0 +1,16 @@
+The solution involves explicitly setting the width of the parent `div` element:
+
+```css
+div {
+  width: 300px; /* Or any explicit width */
+}
+div::before {
+  content: '';
+  display: block;
+  width: calc(100% - 20px);
+  height: 20px;
+  background-color: red;
+}
+```
+
+By setting the width of the parent `div` to `300px` (or any specific value), the `calc()` function now has a concrete value for `100%`, ensuring that the `::before` element's width is correctly calculated.
